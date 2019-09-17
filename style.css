@@ -1,0 +1,57 @@
+body{
+    margin:0;
+}
+.hide{
+    display:none;
+}
+
+.menuItems{
+    padding: 0px 20px;
+    margin: 0px 1px;
+    float: left;
+    height: 100%;
+}
+#menuButton{
+    background:#3f574a;
+    color:white;
+}
+#menuOption1{
+    background:#3f574a;
+}
+#menuOption2{
+    background:#3f574a;
+    color:white;
+}
+
+
+.theGrid{
+    display: grid;
+    grid-gap: 2px;
+    grid-template-rows: 50px;
+    height:100%;
+    background: #313b36;
+    padding: 0px;
+}
+#menuBar{
+    background: #313b36;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    /* padding: 10px; */
+    text-align: center;
+}
+#leftHalf{
+    background: rgb(234, 235, 202);
+    /* padding :0%; */
+    text-align: center;
+}
+#rightHalf{
+    background: white;
+    /* padding: 0%; */
+    text-align: center;
+}
+
+
+
+/* .greenBackground{
+    background: green;
+} */
