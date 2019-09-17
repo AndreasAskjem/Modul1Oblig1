@@ -7,20 +7,23 @@ body{
 
 .menuItems{
     padding: 0px 20px;
-    margin: 0px 1px;
+    margin: 6px 3px;
     float: left;
-    height: 100%;
+    height: 39px;
+    line-height:40px;
+    border-radius: 4px;
 }
 #menuButton{
-    background:#3f574a;
     color:white;
+    margin-left: 7px;
+    background-color: #344d48;
 }
 #menuOption1{
-    background:#3f574a;
+    background: #3e6969;
 }
 #menuOption2{
-    background:#3f574a;
     color:white;
+    background: #3e6969;
 }
 
 
@@ -29,18 +32,18 @@ body{
     grid-gap: 2px;
     grid-template-rows: 50px;
     height:100%;
-    background: #313b36;
+    background: #1b2621;
     padding: 0px;
 }
 #menuBar{
-    background: #313b36;
+    background: #1b2621;
     grid-column: 1 / span 2;
     grid-row: 1;
     /* padding: 10px; */
     text-align: center;
 }
 #leftHalf{
-    background: rgb(234, 235, 202);
+    background: #f4f7d2;
     /* padding :0%; */
     text-align: center;
 }
