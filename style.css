@@ -5,6 +5,34 @@ body{
     display:none;
 }
 
+
+/* Grid with 3 boxes */
+.theGrid{
+    display: grid;
+    grid-gap: 2px;
+    grid-template-rows: 50px;
+    grid-template-columns: 50%;
+    height:100%;
+    background: #1b2621;
+    padding: 0px;
+}
+#menuBar{
+    background: #1b2621;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    text-align: center;
+}
+#leftHalf{
+    background: #f4f7d2;
+    text-align: center;
+}
+#rightHalf{
+    background: white;
+    text-align: center;
+}
+
+
+/* The content of the first box of the grid */
 .menuItems{
     padding: 0px 20px;
     margin: 6px 3px;
@@ -29,36 +57,3 @@ body{
 #menuOption2{
     color:white;
 }
-
-
-.theGrid{
-    display: grid;
-    grid-gap: 2px;
-    grid-template-rows: 50px;
-    height:100%;
-    background: #1b2621;
-    padding: 0px;
-}
-#menuBar{
-    background: #1b2621;
-    grid-column: 1 / span 2;
-    grid-row: 1;
-    /* padding: 10px; */
-    text-align: center;
-}
-#leftHalf{
-    background: #f4f7d2;
-    /* padding :0%; */
-    text-align: center;
-}
-#rightHalf{
-    background: white;
-    /* padding: 0%; */
-    text-align: center;
-}
-
-
-
-/* .greenBackground{
-    background: green;
-} */
