@@ -1,22 +1,10 @@
-// function test(){
-//     console.log(document.getElementById('menuBar'));
-//     document.getElementById('menuBar').classList.toggle('greenBackground');
-// }
 
+// document.getElementById('menuButton').style.backgroundColor = '#344d48'
 
 function hideElements(){
     document.getElementById('menuOption1').classList.toggle('hide');
     document.getElementById('menuOption2').classList.toggle('hide');
     button = document.getElementById('menuButton');
-
-    console.log(button.style.backgroundColor);
-    
-    if(button.style.backgroundColor == '#344d48'){
-        button.style.backgroundColor = '#395246';
-    }
-    else{
-        button.style.backgroundColor = '#344d48';
-    }
 }
 
 let totalButtonPresses = 0;

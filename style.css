@@ -12,18 +12,22 @@ body{
     height: 39px;
     line-height:40px;
     border-radius: 4px;
+    background: #344d48;
 }
 #menuButton{
     color:white;
     margin-left: 7px;
     background-color: #344d48;
+    font-size: 20px;
 }
-#menuOption1{
-    background: #3e6969;
+#menuButton:hover, #menuOption1:hover, #menuOption2:hover{
+    background-color: #415e50 !important;
 }
+/* #menuOption1{
+
+} */
 #menuOption2{
     color:white;
-    background: #3e6969;
 }
 
 
