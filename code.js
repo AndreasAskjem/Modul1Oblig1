@@ -27,7 +27,7 @@ function buttonClicked(element){
         right.style.background = 'blue';
     }
     let text = document.getElementById('showNumberOfPresses');
-    if(totalButtonPresses < 100){
+    if(totalButtonPresses < 10){
         text.innerHTML=`You have made a total of <strong>${totalButtonPresses}</strong> button presses!`;
     }
     else{

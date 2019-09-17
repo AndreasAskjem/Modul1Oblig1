@@ -51,15 +51,18 @@ body{
 #menuButton:hover, #menuOption1:hover, #menuOption2:hover{
     background-color: #415e50 !important;
 }
-/* #menuOption1{
-
-} */
 #menuOption2{
     color:white;
 }
 
 
+#leftHalf p{
+    margin:10px;
+}
 
+
+
+/* locks image ratio and sets image width to window width if the window is too small */
 img{
     display: block;
     max-width: 1320px;
