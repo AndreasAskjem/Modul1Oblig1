@@ -11,21 +11,26 @@ let totalButtonPresses = 0;
 function buttonClicked(element){
     // console.log(element.innerText)
     totalButtonPresses += 1;
-    if (element.innerText=='Green'){
+    if (element.innerText == 'Green'){
         console.log('Green button was pressed');
         right = document.getElementById('rightHalf');
         right.style.background = 'green';
     }
-    if (element.innerText=='Red'){
+    if (element.innerText == 'Red'){
         console.log('Red button was pressed');
         right = document.getElementById('rightHalf');
         right.style.background = 'red';
     }
-    if (element.innerText=='Blue'){
+    if (element.innerText == 'Blue'){
         console.log('Blue button was pressed');
         right = document.getElementById('rightHalf');
         right.style.background = 'blue';
     }
     let text = document.getElementById('showNumberOfPresses');
-    text.innerHTML=`You have made a total of <strong>${totalButtonPresses}</strong> button presses!`;
+    if(totalButtonPresses < 100){
+        text.innerHTML=`You have made a total of <strong>${totalButtonPresses}</strong> button presses!`;
+    }
+    else{
+        text.innerHTML=`You have made <em><strong>TOO MANY</strong></em> button presses!`;
+    }
 }
