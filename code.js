@@ -33,6 +33,7 @@ function buttonClicked(element){
     else{
         text.innerHTML=`You have made <em><strong>TOO MANY</strong></em> button presses!`;
         document.getElementById('errorFix').classList.remove('hide');
+        totalButtonPresses=10;
     }
 }
 
