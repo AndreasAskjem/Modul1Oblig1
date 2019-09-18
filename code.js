@@ -32,5 +32,20 @@ function buttonClicked(element){
     }
     else{
         text.innerHTML=`You have made <em><strong>TOO MANY</strong></em> button presses!`;
+        document.getElementById('errorFix').classList.remove('hide');
+    }
+}
+
+function reset(){
+    if(totalButtonPresses >= 10){
+
+        right = document.getElementById('rightHalf');
+        right.style.background = 'white';
+
+        totalButtonPresses = 0;
+        text = document.getElementById('showNumberOfPresses');
+        text.innerHTML = `You have made a total of <strong>${totalButtonPresses}</strong> button presses!`;
+
+        document.getElementById('errorFix').classList.add('hide');
     }
 }

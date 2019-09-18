@@ -59,7 +59,10 @@ body{
 #leftHalf p{
     margin:10px;
 }
-
+#rightHalf p{
+    margin: 10%;
+    font-size: 50px;
+}
 
 
 /* locks image ratio and sets image width to window width if the window is too small */
