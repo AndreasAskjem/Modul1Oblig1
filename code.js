@@ -8,6 +8,7 @@ function hideElements(){
 }
 
 let totalButtonPresses = 0;
+colorButtons = document.getElementsByClassName('colorB');
 function buttonClicked(element){
     // console.log(element.innerText)
     totalButtonPresses += 1;
@@ -33,8 +34,17 @@ function buttonClicked(element){
     else{
         text.innerHTML=`You have made <em><strong>TOO MANY</strong></em> button presses!`;
         document.getElementById('errorFix').classList.remove('hide');
+        
+        let i = 0;
+        for(i=0; i < 3; i++){
+            colorButtons[i].classList.add('disabled');
+            colorButtons[i].disabled = true;
+            buttonMouseLeave(element);
+        }
+
         totalButtonPresses=10;
     }
+    console.log(colorButtons);
 }
 
 function reset(){
@@ -48,5 +58,35 @@ function reset(){
         text.innerHTML = `You have made a total of <strong>${totalButtonPresses}</strong> button presses!`;
 
         document.getElementById('errorFix').classList.add('hide');
+
+        let i = 0;
+        for(i=0; i < 3; i++){
+            colorButtons[i].classList.remove('disabled');
+            colorButtons[i].disabled = false;
+        }
+    }
+}
+
+function buttonMouseOver(element){
+    if (element.innerText == 'Green'){
+        element.style.background = 'green';
+    }
+    if (element.innerText == 'Red'){
+        element.style.background = 'red';
+    }
+    if (element.innerText == 'Blue'){
+        element.style.background = 'blue'
+    }
+}
+
+function buttonMouseLeave(element){
+    if (element.innerText == 'Green'){
+        element.style.background = 'lightgreen';
+    }
+    if (element.innerText == 'Red'){
+        element.style.background = 'pink';
+    }
+    if (element.innerText == 'Blue'){
+        element.style.background = 'lightblue'
     }
 }

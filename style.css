@@ -4,7 +4,19 @@ body{
 .hide{
     display:none;
 }
+.disabled {
+    opacity: 0.6;
+    background: lightgray;
+    cursor: not-allowed;
+}
+#menuBar a:link, #menuBar a:visited{
+    color: lightblue;
+    text-decoration: none;
+}
 
+#menuBar a:hover{
+    text-decoration: underline;
+}
 
 /* Grid with 3 boxes */
 .theGrid{
@@ -65,6 +77,22 @@ body{
 #rightHalf p{
     margin: 10%;
     font-size: 50px;
+}
+
+
+#greenB, #redB, #blueB{
+    height: 30px;
+    width: 60px;
+    border: none;
+}
+#greenB{
+    background:lightgreen;
+}
+#redB{
+    background: pink;
+}
+#blueB{
+    background: lightblue;
 }
 
 
