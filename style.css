@@ -84,6 +84,7 @@ body{
     height: 30px;
     width: 60px;
     border: none;
+    border-radius: 3px;
 }
 #greenB{
     background:lightgreen;
