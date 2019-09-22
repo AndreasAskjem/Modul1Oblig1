@@ -9,45 +9,47 @@
 
 <body>
 
-    <div class="theGrid">
-        <div id="menuBar">
-            <div id="menuButton" class="menuItems" onclick=hideElements()>
-                <strong>Menu</strong>
-            </div>
-            <div id="menuOption1" class="menuItems hide">
-                <a href="https://google.com">Link</a></div>
-            <div id="menuOption2" class="menuItems hide">
-                <a href="secondPage.html">2nd Page</a>
-            </div>
-
+<div class="theGrid">
+    <div id="menuBar">
+        <div id="menuButton" class="menuItems" onclick=hideElements()>
+            <strong>Menu</strong>
+        </div>
+        <div id="menuOption1" class="menuItems hide">
+            <a href="https://google.com">Link</a>
+        </div>
+        <div id="menuOption2" class="menuItems hide">
+            <a href="secondPage.html">2nd Page</a>
         </div>
 
-        <div id="leftHalf">
-            <p>Click a button to change the color on the right side.</p>
-            
-            <button type="button" onclick="buttonClicked(this)" id="greenB" class="colorB"
-            onmouseover="buttonMouseOver(this)"
-            onmouseout="buttonMouseLeave(this)">
-            Green</button><br><br>
-
-            <button type="button" onclick="buttonClicked(this)" id="redB" class="colorB"
-            onmouseover="buttonMouseOver(this)"
-            onmouseout="buttonMouseLeave(this)">
-            Red</button><br><br>
-
-            <button type="button" onclick="buttonClicked(this)" id=blueB class="colorB"
-            onmouseover="buttonMouseOver(this)"
-            onmouseout="buttonMouseLeave(this)">
-            Blue</button><br><br>
-
-            <p id="showNumberOfPresses">You have made a total of <strong>0</strong> button presses!</p>
-        </div>
-
-        <div id="rightHalf" onclick=reset()>
-            <p id="errorFix" class="hide">Click here to reset!</p>
-        </div>
     </div>
 
-    <script src="code.js"></script>
+    <div id="leftHalf">
+        <p>Click a button to change the color on the right side.</p>
+        
+        <button type="button" onclick="buttonClicked(this)" id="greenB" class="colorB"
+        onmouseover="buttonMouseOver(this)"
+        onmouseout="buttonMouseLeave(this)">
+        Green</button><br><br>
+
+        <button type="button" onclick="buttonClicked(this)" id="redB" class="colorB"
+        onmouseover="buttonMouseOver(this)"
+        onmouseout="buttonMouseLeave(this)">
+        Red</button><br><br>
+
+        <button type="button" onclick="buttonClicked(this)" id=blueB class="colorB"
+        onmouseover="buttonMouseOver(this)"
+        onmouseout="buttonMouseLeave(this)">
+        Blue</button><br><br>
+
+        <p id="showNumberOfPresses">You have made a total of <strong>0</strong> button presses!</p>
+    </div>
+
+    <div id="rightHalf" onclick=reset()>
+        <p id="errorFix" class="hide">Click here to reset!</p>
+    </div>
+</div>
+
+<script src="code.js"></script>
+
 </body>
 </html>

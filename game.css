@@ -1,0 +1,58 @@
+body{
+    margin: 0px;
+}
+
+#theGrid button{
+    height: auto; 
+    width: auto;
+    background: greenyellow;
+    border: 4px solid blue;
+}
+#theGrid button:hover{
+    background: rgb(145, 216, 38);
+}
+
+#wrapper{
+    display: grid;
+    grid-template-rows: 50px auto 200px;
+    grid-template-columns: 50px auto 200px;
+    height: 100%;
+    padding: 0px;
+    grid-template-areas: 'menu menu menu'
+                         '. theGrid results';
+}
+
+#menu{
+    background: #1b2621;
+    text-align: center;
+    grid-area: menu;
+}
+
+#theGrid{
+    background: lightgreen;
+    text-align: center;
+    padding: 20px;
+    grid-area: theGrid;
+    
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: 'button1 button2'
+                         'button3 button4';
+}
+
+#results{
+    grid-area: results;
+}
+
+#button1{
+    grid-area: button1;
+}
+#button2{
+    grid-area: button2;
+}
+#button3{
+    grid-area: button3;
+}
+#button4{
+    grid-area: button4;
+}
