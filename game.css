@@ -28,6 +28,10 @@ body{
     grid-area: menu;
 }
 
+#inputValueX, #inputValueY{
+    width: 40px;
+}
+
 #theGrid{
     background: lightgreen;
     text-align: center;
