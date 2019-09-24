@@ -5,7 +5,6 @@ let card1;
 let card2=-1;
 
 function onCardClick(clickedCard, value){
-    //console.log(clickedCard);
     if(clickedCard.classList.contains('closedCard')){
         
         flipCard(clickedCard, value);
@@ -21,9 +20,6 @@ function onCardClick(clickedCard, value){
         beforePreviousClickedCard = previousClickedCard;
         previousClickedCard = clickedCard;
     }
-
-    
-    
 }
 
 function flipCard(card, value){
@@ -42,7 +38,6 @@ function flipCard(card, value){
 
 //Creates the grid with buttons depending on inputs,
 //and assign them random numbrs.
-//submittedNumbers()
 let buttonCSS;
 let gridTemplate;
 function submittedNumbers(){
@@ -104,9 +99,8 @@ function validInput(x,y){
 
 
 function shuffleArray(length){
-    length = length/2;
     let arr = [];
-    for(i=0; i<length; i++){
+    for(i=0; i<(length/2); i++){
         arr.push(i+1);
         arr.push(i+1);
     }
@@ -114,11 +108,9 @@ function shuffleArray(length){
     let shuffledArr = [];
     let temp;
     for(i=arr.length; i > 0; i--){
-        
         randomNumber = Math.floor(Math.random() * i);
-         temp = arr.splice(randomNumber,1)
+        temp = arr.splice(randomNumber,1)
         shuffledArr.push(temp[0]);
-    
     }
     return shuffledArr;
 }
