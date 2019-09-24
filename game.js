@@ -13,6 +13,10 @@ function onCardClick(clickedCard, value){
             flipCard(previousClickedCard, value);
             flipCard(beforePreviousClickedCard, value);
         }
+        else if(closeCards && (card1 == card2)){
+            previousClickedCard.style.background = "hsl(84, 40%, 45%)";
+            beforePreviousClickedCard.style.background = "hsl(84, 40%, 45%)";
+        }
         closeCards = !closeCards;
 
         card2 = card1;
@@ -64,9 +68,11 @@ function createGrid(x,y){
             rowTemplate += `button${number} `;
 
             buttonCSS += `<button type="button" id="button${number}"
-                          style="grid-area: button${number};"
                           onclick="onCardClick(this,${values[number-1]})"
-                          class="closedCard">
+                          class="closedCard"
+                          style="grid-area: button${number};
+                          width: auto;
+                          height: auto;">
                           &nbsp;&nbsp;</button>`; //${number}
         }
         rowTemplate += `.'`;
