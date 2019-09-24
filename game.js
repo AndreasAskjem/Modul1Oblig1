@@ -31,7 +31,7 @@ function flipCard(card, value){
             card.innerHTML = value;
         }
         else{
-            card.innerHTML = '';
+            card.innerHTML = '&nbsp;&nbsp;';
         }
     } catch{}
 }
@@ -67,7 +67,7 @@ function createGrid(x,y){
                           style="grid-area: button${number};"
                           onclick="onCardClick(this,${values[number-1]})"
                           class="closedCard">
-                          </button>`; //${number}
+                          &nbsp;&nbsp;</button>`; //${number}
         }
         rowTemplate += `.'`;
         //console.log(rowTemplate);
