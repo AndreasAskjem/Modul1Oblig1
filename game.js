@@ -1,60 +1,75 @@
+let previousClickedCard = -2;
+let closeCards = true;
 
-//changeGrid()
-//function gridSize(){}
+function onCardClick(clickedCard, value){
+    console.log(clickedCard);
+    //if()
 
-function changeGrid(){
-    console.log('aaaaaaaaaaa');
-    let grid = '';
-    let template = "'";
-    //grid.
+    flipCard(clickedCard);
     
-    for(i=1; i<=16; i++){
-        grid += `<button type="button" id="button${i}" style="grid-area: button${i};" onclick="clickedButton(this)">${i}</button>`;
-        
-    }
-    document.getElementById('theGrid').innerHTML = grid;
-    document.getElementById('theGrid').style.gridTemplateAreas = "'button1 button2 button3 button4' 'button5 button6 button7 button8' 'button9 button10 button11 button12' 'button13 button14 button15 button16' ";
+
+
+
+    //element.style.backgroundColor = "hsl(84, 47%, 56%)";
 }
 
-function clickedButton(element, value){
-    element.style.backgroundColor = "green";
-    element.innerHTML = value;
-    
+function flipCard(card){
+    card.classList.toggle('openCard');
+    card.classList.toggle('closedCard');
 }
 
-
+//Creates the grid with buttons depending on inputs,
+//and assign them random numbrs.
 //submittedNumbers()
 let buttonCSS;
 let gridTemplate;
 function submittedNumbers(){
     x = Number(document.getElementById('inputValueX').value);
     y = Number(document.getElementById('inputValueY').value);
-    //x=3;
-    //y=2;
-    if(validInput(x,y)){
-        let values = shuffleArray(x*y);
-        let rowTemplate;
-        let buttonCSS = '';
-        let gridTemplate = '';
 
-        for(i=1; i<=y; i++){
-            rowTemplate = `'`;
-            for(j=1; j<=x; j++){
-                number = j + i*x - x;
-                rowTemplate += `button${number} `;
-                buttonCSS += `<button type="button" id="button${number}"
-                              style="grid-area: button${number};"
-                              onclick="clickedButton(this, ${values[number-1]})">${number}</button>`;
-            }
-            rowTemplate += `'`;
-            gridTemplate += rowTemplate;
-        }
-        document.getElementById('theGrid').innerHTML = buttonCSS;
-        document.getElementById('theGrid').style.gridTemplateAreas = gridTemplate;
-        document.getElementById('theGrid').style.gridAutoColumns = "repeat(x, 1fr)";
-        document.getElementById('theGrid').style.gridAutoRows = "repeat(y, 1fr)";
+    if(validInput(x,y)){
+        createGrid(x,y);
     }
 }
+
+createGrid(3,2);
+function createGrid(x,y){
+    let values = shuffleArray(x*y);
+    let rowTemplate;
+    let buttonCSS = '';
+    let gridTemplate = '';
+    let number;
+
+    for(i=1; i<=y; i++){
+        rowTemplate = `'`;
+        for(j=1; j<=x; j++){
+            number = j + i*x - x;
+            rowTemplate += `button${number} `;
+
+            buttonCSS += `<button type="button" id="button${number}"
+                          style="grid-area: button${number};"
+                          onclick="onCardClick(this,${values[number-1]})"
+                          class="closedCard">
+                          ${number}</button>`;
+        }
+        rowTemplate += `.'`;
+        //console.log(rowTemplate);
+        gridTemplate += rowTemplate;
+    }
+    rowTemplate = `'`;
+    for(i=0;i<x+1;i++){
+        rowTemplate += '. '
+    }
+    rowTemplate += `'`;
+    gridTemplate += rowTemplate;
+    //console.log(rowTemplate);
+    document.getElementById('theGrid').innerHTML = buttonCSS;
+    document.getElementById('theGrid').style.gridTemplateAreas = gridTemplate;
+    document.getElementById('theGrid').style.gridAutoColumns = "repeat(x, 1fr) auto";
+    document.getElementById('theGrid').style.gridAutoRows = "repeat(y, 1fr) auto";
+}
+
+
 
 function validInput(x,y){
     if(Number(x) && Number(y) && ((x*y)%2==0)){
@@ -73,8 +88,6 @@ function shuffleArray(length){
         arr.push(i+1);
         arr.push(i+1);
     }
-    console.log(arr);
-
 
     let shuffledArr = [];
     let temp;
@@ -85,6 +98,5 @@ function shuffleArray(length){
         shuffledArr.push(temp[0]);
     
     }
-    console.log(shuffledArr);
     return shuffledArr;
 }

@@ -5,20 +5,27 @@ body{
 #theGrid button{
     height: auto; 
     width: auto;
-    background: greenyellow;
     border: 5px solid blue;
     border-radius: 10%;
     font-size: 40px;
 }
-#theGrid button:hover{
-    background: rgb(145, 216, 38);
-    
+
+.closedCard{
+    background: hsl(84, 59%, 73%);
+}
+
+.openCard{
+    background: hsl(84, 47%, 56%);
+}
+
+.closedCard:hover{
+    background: hsl(84, 50%, 70%);
 }
 
 #wrapper{
     display: grid;
-    grid-template-rows: 50px auto 200px;
-    grid-template-columns: 50px auto 200px;
+    grid-template-rows: 50px auto auto;
+    grid-template-columns: 50px auto 50px;;
     height: 100%;
     padding: 0px;
     grid-template-areas: 'menu menu menu'

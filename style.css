@@ -49,6 +49,7 @@ body{
 
 /* The content of the first box of the grid */
 .menuItems{
+    user-select: none;
     padding: 0px 20px;
     margin: 6px 3px;
     float: left;
