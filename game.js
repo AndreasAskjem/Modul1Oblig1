@@ -82,8 +82,8 @@ function createGrid(x,y){
     //console.log(rowTemplate);
     document.getElementById('theGrid').innerHTML = buttonCSS;
     document.getElementById('theGrid').style.gridTemplateAreas = gridTemplate;
-    document.getElementById('theGrid').style.gridAutoColumns = "repeat(x, 1fr) auto";
-    document.getElementById('theGrid').style.gridAutoRows = "repeat(y, 1fr) auto";
+    //document.getElementById('theGrid').style.gridAutoColumns = "repeat(x, 1fr) auto";
+    //document.getElementById('theGrid').style.gridAutoRows = "repeat(y, 1fr) auto";
 }
 
 
