@@ -1,21 +1,43 @@
-let previousClickedCard = -2;
+let previousClickedCard = -1;
+let beforePreviousClickedCard = -2;
 let closeCards = true;
+let card1;
+let card2=-1;
 
 function onCardClick(clickedCard, value){
-    console.log(clickedCard);
-    //if()
+    //console.log(clickedCard);
+    if(clickedCard.classList.contains('closedCard')){
+        
+        flipCard(clickedCard, value);
+        
+        if(closeCards && (card1 != card2)){
+            flipCard(previousClickedCard, value);
+            flipCard(beforePreviousClickedCard, value);
+        }
+        closeCards = !closeCards;
 
-    flipCard(clickedCard);
+        card2 = card1;
+        card1 = value;
+        beforePreviousClickedCard = previousClickedCard;
+        previousClickedCard = clickedCard;
+    }
+
     
-
-
-
-    //element.style.backgroundColor = "hsl(84, 47%, 56%)";
+    
 }
 
-function flipCard(card){
-    card.classList.toggle('openCard');
-    card.classList.toggle('closedCard');
+function flipCard(card, value){
+    try{
+        card.classList.toggle('openCard');
+        card.classList.toggle('closedCard');
+
+        if(card.classList.contains('openCard')){
+            card.innerHTML = value;
+        }
+        else{
+            card.innerHTML = '';
+        }
+    } catch{}
 }
 
 //Creates the grid with buttons depending on inputs,
@@ -50,7 +72,7 @@ function createGrid(x,y){
                           style="grid-area: button${number};"
                           onclick="onCardClick(this,${values[number-1]})"
                           class="closedCard">
-                          ${number}</button>`;
+                          </button>`; //${number}
         }
         rowTemplate += `.'`;
         //console.log(rowTemplate);

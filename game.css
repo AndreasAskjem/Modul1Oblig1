@@ -3,8 +3,9 @@ body{
 }
 
 #theGrid button{
-    height: auto; 
-    width: auto;
+    height: 100px; 
+    width: 100px;
+    /*margin: 40px;*/
     border: 5px solid blue;
     border-radius: 10%;
     font-size: 40px;
