@@ -60,7 +60,7 @@ function createGrid(x,y){
 
     
     let cardSize = getCardSize(x,y);
-
+    numberSize = cardSize*0.6;
 
     for(i=1; i<=y; i++){
         rowTemplate = `'. `;
@@ -69,7 +69,8 @@ function createGrid(x,y){
             rowTemplate += `button${number} `;
 
             buttonCSS += `<button type="button" id="button${number}"
-                          style="grid-area: button${number};"
+                          style="grid-area: button${number};
+                          font-size: ${numberSize}px;"
                           onclick="onCardClick(this,${values[number-1]})"
                           class="closedCard">
                           </button>`; //${number}
@@ -90,6 +91,7 @@ function createGrid(x,y){
     document.getElementById('theGrid').style.gridTemplateAreas = gridTemplate;
     widthPercent = cardSize; //"80px";  //`${100/x}%`;
     heightPercent = cardSize; //"80px";  //`${100/y}%`;
+    
     document.getElementById('theGrid').style.gridTemplateColumns = `auto repeat(${x}, ${widthPercent}px) auto`;
     document.getElementById('theGrid').style.gridTemplateRows = `repeat(${y}, ${heightPercent}px) auto`;
     
