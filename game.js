@@ -1,10 +1,11 @@
 let previousClickedCard = -1;
 let beforePreviousClickedCard = -2;
 let closeCards = true;
-let card1;
-let card2=-1;
+let card1 =-1;
+let card2 =-2;
 
 function onCardClick(clickedCard, value){
+    console.log(document.getElementById('theGrid').offsetWidth)
     if(clickedCard.classList.contains('closedCard')){
         
         flipCard(clickedCard, value);
@@ -12,10 +13,6 @@ function onCardClick(clickedCard, value){
         if(closeCards && (card1 != card2)){
             flipCard(previousClickedCard, value);
             flipCard(beforePreviousClickedCard, value);
-        }
-        else if(closeCards && (card1 == card2)){
-            previousClickedCard.style.background = "hsl(84, 40%, 45%)";
-            beforePreviousClickedCard.style.background = "hsl(84, 40%, 45%)";
         }
         closeCards = !closeCards;
 
@@ -35,7 +32,7 @@ function flipCard(card, value){
             card.innerHTML = value;
         }
         else{
-            card.innerHTML = '&nbsp;&nbsp;';
+            card.innerHTML = '';
         }
     } catch{}
 }
@@ -61,26 +58,29 @@ function createGrid(x,y){
     let gridTemplate = '';
     let number;
 
+    
+    let cardSize = getCardSize(x,y);
+
+
     for(i=1; i<=y; i++){
-        rowTemplate = `'`;
+        rowTemplate = `'. `;
         for(j=1; j<=x; j++){
             number = j + i*x - x;
             rowTemplate += `button${number} `;
 
             buttonCSS += `<button type="button" id="button${number}"
+                          style="grid-area: button${number};"
                           onclick="onCardClick(this,${values[number-1]})"
-                          class="closedCard"
-                          style="grid-area: button${number};
-                          width: auto;
-                          height: auto;">
-                          &nbsp;&nbsp;</button>`; //${number}
+                          class="closedCard">
+                          </button>`; //${number}
         }
         rowTemplate += `.'`;
         //console.log(rowTemplate);
         gridTemplate += rowTemplate;
     }
+
     rowTemplate = `'`;
-    for(i=0;i<x+1;i++){
+    for(i=0;i<x+2;i++){
         rowTemplate += '. '
     }
     rowTemplate += `'`;
@@ -88,14 +88,40 @@ function createGrid(x,y){
     //console.log(rowTemplate);
     document.getElementById('theGrid').innerHTML = buttonCSS;
     document.getElementById('theGrid').style.gridTemplateAreas = gridTemplate;
-    //document.getElementById('theGrid').style.gridAutoColumns = "repeat(x, 1fr) auto";
-    //document.getElementById('theGrid').style.gridAutoRows = "repeat(y, 1fr) auto";
+    widthPercent = cardSize; //"80px";  //`${100/x}%`;
+    heightPercent = cardSize; //"80px";  //`${100/y}%`;
+    document.getElementById('theGrid').style.gridTemplateColumns = `auto repeat(${x}, ${widthPercent}px) auto`;
+    document.getElementById('theGrid').style.gridTemplateRows = `repeat(${y}, ${heightPercent}px) auto`;
+    
+}
+
+
+function getCardSize(width, height){
+    totalWidth = document.getElementById('theGrid').offsetWidth;
+    totalHeight = document.getElementById('theGrid').offsetHeight;
+    let cardSize;
+
+
+    console.log('totalW ' + totalWidth);
+    console.log('totalH ' + totalHeight);
+    console.log('W ' + width);
+    console.log('H ' + height);
+    if(totalWidth/width < totalHeight/height){
+        cardSize = (totalWidth-5)/(width+3);
+    }
+    else{
+        cardSize = (totalHeight-5)/(height+3);
+    }
+    console.log(cardSize);
+    //console.log(totalWidth/width + ' ' + totalHeight/height);
+    return cardSize;
 }
 
 
 
 function validInput(x,y){
-    if(Number(x) && Number(y) && ((x*y)%2==0)){
+    if(Number(x) && Number(y) && ((x*y)%2==0 && x>0 && x<11 && y>0 && y<11)){
+
         return(true);
     }
     else{
