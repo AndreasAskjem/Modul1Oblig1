@@ -6,7 +6,6 @@ body{
 }
 .disabled {
     opacity: 0.6;
-    background: lightgray;
     cursor: not-allowed;
 }
 #menuBar a:link, #menuBar a:visited{

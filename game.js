@@ -5,7 +5,7 @@ let card1 =-1;
 let card2 =-2;
 
 function onCardClick(clickedCard, value){
-    console.log(document.getElementById('theGrid').offsetWidth)
+    //console.log(document.getElementById('theGrid').offsetWidth)
     if(clickedCard.classList.contains('closedCard')){
         
         flipCard(clickedCard, value);
@@ -103,11 +103,10 @@ function getCardSize(width, height){
     totalHeight = document.getElementById('theGrid').offsetHeight;
     let cardSize;
 
-
-    console.log('totalW ' + totalWidth);
-    console.log('totalH ' + totalHeight);
-    console.log('W ' + width);
-    console.log('H ' + height);
+    //console.log('totalW ' + totalWidth);
+    //console.log('totalH ' + totalHeight);
+    //console.log('W ' + width);
+    //console.log('H ' + height);
     if(totalWidth/width < totalHeight/height){
         cardSize = (totalWidth-5)/(width+3);
     }
@@ -123,7 +122,6 @@ function getCardSize(width, height){
 
 function validInput(x,y){
     if(Number(x) && Number(y) && ((x*y)%2==0 && x>0 && x<11 && y>0 && y<11)){
-
         return(true);
     }
     else{
@@ -141,6 +139,7 @@ function shuffleArray(length){
 
     let shuffledArr = [];
     let temp;
+    let randomNumber;
     for(i=arr.length; i > 0; i--){
         randomNumber = Math.floor(Math.random() * i);
         temp = arr.splice(randomNumber,1)

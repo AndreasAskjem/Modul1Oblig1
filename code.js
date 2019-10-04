@@ -11,20 +11,18 @@ let totalButtonPresses = 0;
 colorButtons = document.getElementsByClassName('colorB');
 function buttonClicked(element){
     // console.log(element.innerText)
+    right = document.getElementById('rightHalf');
     totalButtonPresses += 1;
     if (element.innerText == 'Green'){
         console.log('Green button was pressed');
-        right = document.getElementById('rightHalf');
         right.style.background = 'green';
     }
     if (element.innerText == 'Red'){
         console.log('Red button was pressed');
-        right = document.getElementById('rightHalf');
         right.style.background = 'red';
     }
     if (element.innerText == 'Blue'){
         console.log('Blue button was pressed');
-        right = document.getElementById('rightHalf');
         right.style.background = 'blue';
     }
     let text = document.getElementById('showNumberOfPresses');
@@ -35,13 +33,11 @@ function buttonClicked(element){
         text.innerHTML=`You have made <em><strong>TOO MANY</strong></em> button presses!`;
         document.getElementById('errorFix').classList.remove('hide');
         
-        let i = 0;
         for(i=0; i < 3; i++){
             colorButtons[i].classList.add('disabled');
             colorButtons[i].disabled = true;
-            buttonMouseLeave(element);
         }
-
+        buttonMouseLeave(element);
         totalButtonPresses=10;
     }
     console.log(colorButtons);
@@ -59,7 +55,6 @@ function reset(){
 
         document.getElementById('errorFix').classList.add('hide');
 
-        let i = 0;
         for(i=0; i < 3; i++){
             colorButtons[i].classList.remove('disabled');
             colorButtons[i].disabled = false;

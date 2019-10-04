@@ -2,6 +2,16 @@ body{
     margin: 0px;
 }
 
+#menu{
+    background: #1b2621;
+    text-align: center;
+    grid-area: menu;
+}
+
+#inputValueX, #inputValueY{
+    width: 40px;
+}
+
 input{
     margin: 5px;
     height:40px;
@@ -9,9 +19,6 @@ input{
     font-size: 25px;
 }
 
-/* input[type=number]{
-    width: 50px;
-} */
 
 #submitButton{
     height: 32px;
@@ -19,12 +26,8 @@ input{
 }
 
 #theGrid button{
-    /*height: auto; 
-    width: auto;*/
-    /*margin: 40px;*/
     border: 5px solid blue;
     border-radius: 10%;
-    /*font-size: 40px;*/
 }
 
 .closedCard{
@@ -49,23 +52,7 @@ input{
                          '. theGrid results';
 }
 
-#menu{
-    background: #1b2621;
-    text-align: center;
-    grid-area: menu;
-}
 
-#inputValueX, #inputValueY{
-    width: 40px;
-}
-
-/*
-display: block;
-max-width: 1320px;
-max-height: 825px;
-width: 100%;
-height: auto;
-*/
 
 #theGrid{
     background: lightgreen;
@@ -73,11 +60,6 @@ height: auto;
     padding: 20px;
     grid-area: theGrid;
 
-    /*max-width: 1000px;
-    max-height: 1000px;
-    width: auto;
-    height: 100%;*/
-    
     display: grid;
     grid-gap: 10px;
     grid-template-areas: 'button1 button2'
